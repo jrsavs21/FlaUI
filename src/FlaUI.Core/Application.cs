@@ -150,7 +150,7 @@ namespace FlaUI.Core
 
         public static Application Attach(Process process)
         {
-            Logger.Default.Debug($"[Attaching to process:{process.Id}] [Process name:{process.ProcessName}] [Process full path:{process.MainModule.FileName}]");
+            //Logger.Default.Debug($"[Attaching to process:{process.Id}] [Process name:{process.ProcessName}] [Process full path:{process.MainModule.FileName}]");
             return new Application(process);
         }
 
