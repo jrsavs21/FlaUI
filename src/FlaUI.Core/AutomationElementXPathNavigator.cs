@@ -56,7 +56,7 @@ namespace FlaUI.Core
         }
 
         /// <inheritdoc />
-        public override string LocalName => IsInAttribute ? GetAttributeName(_attributeIndex) : _currentElement.Properties.ControlType.Value.ToString();
+        public override string LocalName => IsInAttribute ? GetAttributeName(_attributeIndex) : _currentElement.Properties.ControlType.ValueOrDefault.ToString();
 
         /// <inheritdoc />
         public override string Name => LocalName;
@@ -257,13 +257,13 @@ namespace FlaUI.Core
             switch ((ElementAttributes)attributeIndex)
             {
                 case ElementAttributes.AutomationId:
-                    return _currentElement.Properties.AutomationId.Value;
+                    return _currentElement.Properties.AutomationId.ValueOrDefault;
                 case ElementAttributes.Name:
-                    return _currentElement.Properties.Name.Value;
+                    return _currentElement.Properties.Name.ValueOrDefault;
                 case ElementAttributes.ClassName:
-                    return _currentElement.Properties.ClassName.Value;
+                    return _currentElement.Properties.ClassName.ValueOrDefault;
                 case ElementAttributes.HelpText:
-                    return _currentElement.Properties.HelpText.Value;
+                    return _currentElement.Properties.HelpText.ValueOrDefault;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(attributeIndex));
             }
