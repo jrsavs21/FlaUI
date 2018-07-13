@@ -6,7 +6,7 @@ namespace FlaUI.Core.Conditions
     public class PropertyCondition : ConditionBase
     {
         public PropertyCondition(PropertyId property, object value)
-            : this(property, value, PropertyConditionFlags.None)
+            : this(property, value, PropertyConditionFlags.IgnoreCase)
         {
         }
 
